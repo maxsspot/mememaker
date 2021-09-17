@@ -66,31 +66,13 @@ function awayb () {
 }
 
 function finish () {
-    var doc = new jsPDF();
+                var a = document.body.appendChild(
+               document.createElement("a")
+            );
+           a.download = "meme.html";
+           a.href = "data:text/html," + document.getElementById("meme").innerHTML;
+           a.click(); //Trigger a click on the element
 
- function saveDiv(meme, title) {
- doc.fromHTML(`<html><head><title>${title}</title></head><body>` + document.getElementById(meme).innerHTML + `</body></html>`);
- doc.save('meme.pdf');
-}
-
-function printDiv(meme,
-  title) {
-
-  let mywindow = window.open('', 'PRINT', 'height=650,width=900,top=100,left=150');
-
-  mywindow.document.write(`<html><head><title>${title}</title>`);
-  mywindow.document.write('</head><body >');
-  mywindow.document.write(document.getElementById(meme).innerHTML);
-  mywindow.document.write('</body></html>');
-
-  mywindow.document.close(); // necessary for IE >= 10
-  mywindow.focus(); // necessary for IE >= 10*/
-
-  mywindow.print();
-  mywindow.close();
-
-  return true;
-}
 }
 
 function openf () {
